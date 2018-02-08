@@ -33,7 +33,7 @@ addons:
    postgresql: "9.5"
 
 script:
-  - ./bin/phpunit --verbose --configuration tests/phpunit.xml.dist $TEST_DEPS
+  - ./bin/phpunit --verbose --configuration tests/phpunit.xml.dist --coverage-clover=coverage.xml $TEST_DEPS
   - ./bin/sabre-cs-fixer fix . --dry-run --diff
 
 after_success:
